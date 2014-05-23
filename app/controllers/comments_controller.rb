@@ -18,8 +18,7 @@ class CommentsController < ApplicationController
     if @comment.save
       flash[:success] = "Created a new comment!"
     end
-    ApplicationController.helpers.broadcast('/messages/new') { "a block" }
-    redirect_to idea_path(@comment.idea)
+    render 'create'
   end
 
   #def show
