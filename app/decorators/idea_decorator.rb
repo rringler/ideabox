@@ -1,4 +1,4 @@
-class PostDecorator < Draper::Decorator
+class IdeaDecorator < Draper::Decorator
   delegate_all
 
   def sub_title
