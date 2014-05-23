@@ -2,9 +2,8 @@
   <div class="row comment-post">
     <div class="col-sm-12">
       <h5>
-        <small>posted to:</small>
-        <%= link_to comment.post.title, board_post_path(comment.post.board,
-                                                        comment.post) %>
+        <small>commented on:</small>
+        <%= link_to comment.idea.description, idea_path(comment.idea) %>
       </h5>
     </div>
   </div>
@@ -25,12 +24,9 @@
       </div>
       <div class="row comment-footer">
         <small>
-          <% link_params = { board_id:  comment.post.board,
-                             post_id:   comment.post,
+          <% link_params = { idea_id:   comment.idea,
                              parent_id: comment.id } %>
-          <%= link_to 'Reply', new_board_post_comment_path(link_params),
-                               remote: true,
-                               method: :get %>
+          <%= link_to 'Reply', new_idea_comment_path(link_params) %>
         </small>
         <div id="<%= "comment-#{comment.id}-reply" %>"></div>
       </div>

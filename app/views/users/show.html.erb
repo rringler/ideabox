@@ -6,41 +6,15 @@
 
 <hr />
 
-<% if @user == current_user && @user.following_boards %>
-  <section id="followed-boards">
-    <div class="row">
-      <div class="col-sm-12">
-        <h4>Board subscriptions:</h4>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12">
-        <ul>
-          <% @user.following_boards.each do |board| %>
-            <li>
-              <h4>
-                <%= link_to board.title, board %> |
-                <small><%= board.description%></small>
-              </h4>
-            </li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <hr />
-<% end %>
-
-<% if @user.recent_posts %>
+<% if @user.recent_ideas %>
   <section id="posts">
     <div class="row">
       <div class="col-sm-12">
-        <h4>Recent posts:</h4>
+        <h4>Recent ideas:</h4>
       </div>
     </div>
-    <%= render partial: 'shared/post_summary', collection: @user.recent_posts,
-                                               as: :post %>
+    <%= render partial: 'shared/idea_summary', collection: @user.recent_ideas,
+                                               as: :idea %>
   </section>
 
   <hr />

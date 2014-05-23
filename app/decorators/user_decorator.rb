@@ -1,8 +1,8 @@
 class UserDecorator < Draper::Decorator
   delegate_all
 
-  def recent_posts
-    object.posts.recent
+  def recent_ideas
+    object.ideas.recent
   end
 
   def recent_comments
