@@ -19,6 +19,8 @@ class CommentsController < ApplicationController
       flash[:success] = "Created a new comment!"
     end
 
+    redirect_to idea_path(@comment.idea)
+
   end
 
   #def show
