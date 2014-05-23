@@ -24,7 +24,7 @@ class IdeasController < ApplicationController
   end
 
   def show
-    @idea = Idea.where(id: params[:id]).first
+    @idea = Idea.where(id: params[:id]).first.decorate
   end
 
   def edit

@@ -14,7 +14,7 @@
 <hr />
 
 <div class="post-reply">
-  <%= link_to 'Reply', new_idea_comment_path(post_id: @idea, parent_id: nil),
+  <%= link_to 'Reply', new_idea_comment_path(idea_id: @idea, parent_id: nil),
                        class: 'btn btn-primary',
                        remote: true,
                        method: :get %>
