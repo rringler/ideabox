@@ -1,0 +1,3 @@
+<% broadcast "/messages/new" do %>
+$(".comments-container").append("<%= escape_javascript render partial: "shared/comment_detail", locals: { comment: @comment} %>");
+<% end %>

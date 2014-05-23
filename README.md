@@ -52,6 +52,18 @@ Installation
     ```
 7. As of v3.1.0, Devise requires the secret key be available during asset precompilation.  Heroku's Cedar stack doesn't support this by default, but you can enable it using the `$ heroku labs:enable user-env-compile -a <appname>` command.
 
+Running the server
+=================
+
+To have live updateing of comments, the faye server must also be running in
+tandem with the rails server. To accomplish this run the following from the
+rails directory root:
+
+```
+rackup faye.ru -s thin -E production
+```
+
+This will start the faye server.
 
 TODO
 ====
