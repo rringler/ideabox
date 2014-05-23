@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.0.0'
 
+gem 'faye'
 gem 'rails', '4.0.0'
 gem 'jquery-rails'
 gem 'sass-rails'
