@@ -55,7 +55,7 @@ Installation
 Running the server
 =================
 
-To have live updateing of comments, the faye server must also be running in
+To have live updating of comments, the faye server must also be running in
 tandem with the rails server. To accomplish this run the following from the
 rails directory root:
 
