@@ -1,11 +1,9 @@
 <div class="post post-summary rounded-box">
   <div class="row post-board">
     <div class="col-sm-12">
-      <h5>
-        <small>posted to:</small>
-        <%#= link_to post.board.title, board_path(post.board) %> |
-        <small><%= idea.description %></small>
-      </h5>
+      <h3>
+        <%= link_to idea.description, idea_path(idea) %>
+      </h3>
     </div>
   </div>
 

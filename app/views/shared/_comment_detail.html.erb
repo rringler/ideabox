@@ -15,7 +15,9 @@
       </div>
       <div class="row comment-footer">
         <small>
-
+          <% link_params = { idea_id:   comment.idea,
+                             parent_id: comment.id } %>
+          <%= link_to 'Reply', new_idea_comment_path(link_params) %>
         </small>
       </div>
     </div>
