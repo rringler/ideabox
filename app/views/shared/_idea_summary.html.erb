@@ -3,8 +3,8 @@
     <div class="col-sm-12">
       <h5>
         <small>posted to:</small>
-        <%= link_to post.board.title, board_path(post.board) %> |
-        <small><%= post.board.description %></small>
+        <%#= link_to post.board.title, board_path(post.board) %> |
+        <small><%= idea.description %></small>
       </h5>
     </div>
   </div>
@@ -17,16 +17,16 @@
     </div>
     <div class="col-sm-11">
       <div class="row post-title">
-        <h4><%= link_to post.title, board_post_path(post.board.id, post.id) %></h4>
+        <h4><%#= link_to post.title, board_post_path(post.board.id, post.id) %></h4>
       </div>
       <div class="row post-stats">
         <p>
-          submitted <%= time_ago_in_words(post.created_at) %> ago by
-           <%= link_to post.user.username, post.user %>
+          submitted <%= time_ago_in_words(idea.created_at) %> ago by
+           <%= link_to idea.user.username, post.user %>
         </p>
       </div>
       <div class="row post-comments">
-        <%= link_to "#{post.comments.size} comments", board_post_path(post.board.id, post.id) %>
+        <%= link_to "#{post.comments.size} comments", idea_path(idea.id) %>
       </div>
     </div>
   </div>

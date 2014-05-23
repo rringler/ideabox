@@ -11,19 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131115210934) do
-
-  create_table "boards", force: true do |t|
-    t.string   "title",       null: false
-    t.string   "slug",        null: false
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20140523021538) do
 
   create_table "comments", force: true do |t|
     t.integer  "user_id",    null: false
-    t.integer  "post_id",    null: false
+    t.integer  "idea_id",    null: false
     t.text     "text",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -31,7 +23,7 @@ ActiveRecord::Schema.define(version: 20131115210934) do
   end
 
   add_index "comments", ["ancestry"], name: "index_comments_on_ancestry"
-  add_index "comments", ["post_id"], name: "index_comments_on_post_id"
+  add_index "comments", ["idea_id"], name: "index_comments_on_idea_id"
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "follows", force: true do |t|
@@ -47,18 +39,14 @@ ActiveRecord::Schema.define(version: 20131115210934) do
   add_index "follows", ["followable_id", "followable_type"], name: "fk_followables"
   add_index "follows", ["follower_id", "follower_type"], name: "fk_follows"
 
-  create_table "posts", force: true do |t|
-    t.integer  "user_id",    null: false
-    t.integer  "board_id",   null: false
-    t.string   "title",      null: false
-    t.string   "link"
-    t.text     "text"
+  create_table "ideas", force: true do |t|
+    t.integer  "user_id",     null: false
+    t.string   "description", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "posts", ["board_id"], name: "index_posts_on_board_id"
-  add_index "posts", ["user_id"], name: "index_posts_on_user_id"
+  add_index "ideas", ["user_id"], name: "index_ideas_on_user_id"
 
   create_table "users", force: true do |t|
     t.datetime "created_at"
@@ -98,4 +86,5 @@ ActiveRecord::Schema.define(version: 20131115210934) do
   add_index "votes", ["voteable_id", "voteable_type"], name: "index_votes_on_voteable_id_and_voteable_type"
   add_index "votes", ["voter_id", "voter_type", "voteable_id", "voteable_type"], name: "fk_one_vote_per_user_per_entity", unique: true
   add_index "votes", ["voter_id", "voter_type"], name: "index_votes_on_voter_id_and_voter_type"
+
 end
