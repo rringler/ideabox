@@ -6,9 +6,7 @@ Ideabox::Application.routes.draw do
     resources :comments
   end
 
-  resources :boards do
-    resources :posts, concerns: :commentable
-  end
+  resources :ideas, concerns: :commentable
 
   resources :ideas
 
@@ -16,9 +14,6 @@ Ideabox::Application.routes.draw do
   match '/user/:id',   to: "users#show",
                        via: [:get],
                        as: 'user'
-  match 'boards/find', to: "boards#find",
-                       via: [:post],
-                       as: 'find_board'
   match 'vote',        to: "votes#vote",
                        via: [:post],
                        as: 'vote'

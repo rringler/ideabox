@@ -1,0 +1,38 @@
+<%= form_for @idea, url: ideas_path(params[:idea_id]), method: :post do |f| %>
+  <% if @idea.errors.any? %>
+    <div class="row">
+      <div id="form_errors" class="col-sm-12">
+        <h3>
+          <%= pluralize(@idea.errors.count, "error") %> prohibited this
+              idea from being saved:
+        </h3>
+        <ul>
+          <% @idea.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field :user_id, value: current_user.id %>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="form-group">
+        <%= f.label :description %>
+        <%= f.text_field :description, class: "form-control",
+                                       placeholder: "Idea description",
+                                       autofocus: true %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -12,9 +12,10 @@ class User < ActiveRecord::Base
   acts_as_voter
   acts_as_follower
 
-  has_karma :posts, as: :submitter, weight: [1, 1]
+  has_karma :ideas, as: :submitter, weight: [1, 1]
   has_karma :comments, as: :submitter, weight: [1, 1]
-  has_many :posts
+  has_many :ideas
+  #has_many :posts
   has_many :comments
   has_many :votes
 
