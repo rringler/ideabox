@@ -3,12 +3,11 @@ class CommentsController < ApplicationController
   before_filter :comment_owner, only: [:edit, :update, :destroy]
 
   def new
-    @comment = Comment.new(post_id:   params[:post_id],
+    @comment = Comment.new(idea_id:   params[:idea_id],
                            parent_id: params[:parent_id])
 
     respond_to do |format|
       format.html
-      format.js
     end
   end
 
@@ -31,8 +30,7 @@ class CommentsController < ApplicationController
 
   def update
     if @comment.update_attributes(comment_params)
-      redirect_to board_post_path(@comment.post.board,
-                                  @comment.post),
+      redirect_to idea_path(@comment.idea),
                   flash: { success: "Comment updated." }
     else
       render 'edit'
@@ -46,12 +44,11 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:post_id, :parent_id, :text)
+    params.require(:comment).permit(:idea_id, :parent_id, :text)
   end
 
   def comment_owner
     @comment = Comment.where(id: params[:id]).first
-    redirect_to board_post_path(@comment.post.board,
-                                @comment.post) unless @comment.user == current_user
+    redirect_to idea_path(@comment.idea) unless @comment.user == current_user
   end
 end

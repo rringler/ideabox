@@ -2,7 +2,7 @@
   <% if @parent %>
     <%= render partial: 'shared/comment_summary', object: @comment.parent, as: :comment %>
   <% else %>
-    <%= render partial: 'shared/post_summary', object: @comment.post, as: :post %>
+    <%= render partial: 'shared/idea_summary', object: @comment.idea, as: :idea %>
   <% end %>
 </div>
 
