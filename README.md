@@ -1,7 +1,7 @@
 Ideabox
 ==========
 
-Ideabox is a reddit-style message board system that allows you to turn your address into a message board.  It was envisioned as a digital corkboard for apartment buildings as an easy way to broadcast building-wide notices, offer and seek ride-sharing opportunities, or just to complain about the asshole in #B10.
+Ideabox is a [SD Ruby](http://www.sdruby.org/) hack-night project.  Given the challenge to create an online suggestion box that supports threaded commenting on suggestions, teams of three to four people created complete rails apps within two and a half hours, followed by project demos immediately after.
 
 
 Dependencies
@@ -15,9 +15,8 @@ gem 'ancestry'
 gem 'thumbs_up'
 gem 'acts_as_follower'
 gem 'draper'
+gem 'faye'
 ```
-
-Additionally, the app uses the USPS Webtools API to standardize postal addresses to prevent duplicate message boards.
 
 
 Installation
@@ -57,16 +56,13 @@ Installation
 TODO
 ====
 
-* Board admins
-* Submitted links are currently not displayed
-* Sorting algorithms (currently sorts by most recent)
-* Private messaging
+* eh, it was a hack-night project.
 
 
 Credits
 =======
 
-Ideabox is the product of [Ryan Ringler](http://github.com/rringler).  It was developed largerly as a pet project to continue to learn and better understand rails.
+Ideabox is the product of Ephraim Feig, [Michael Cordell](http://github.com/mcordell) and [Ryan Ringler](http://github.com/rringler).
 
 
 License
