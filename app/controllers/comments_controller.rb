@@ -19,7 +19,6 @@ class CommentsController < ApplicationController
       flash[:success] = "Created a new comment!"
     end
 
-    redirect_to board_post_path(@comment.post.board, @comment.post)
   end
 
   #def show

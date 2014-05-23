@@ -1,12 +1,12 @@
-Superlocal
+Ideabox
 ==========
 
-Superlocal is a reddit-style message board system that allows you to turn your address into a message board.  It was envisioned as a digital corkboard for apartment buildings as an easy way to broadcast building-wide notices, offer and seek ride-sharing opportunities, or just to complain about the asshole in #B10.
+Ideabox is a reddit-style message board system that allows you to turn your address into a message board.  It was envisioned as a digital corkboard for apartment buildings as an easy way to broadcast building-wide notices, offer and seek ride-sharing opportunities, or just to complain about the asshole in #B10.
 
 
 Dependencies
 ============
-Superlocal was developed on Ruby v2.0 and Rails v4.0.  Several gems were utilized to make development easier:
+Ideabox was developed on Ruby v2.0 and Rails v4.0.  Several gems were utilized to make development easier:
 
 ```ruby
 gem 'figaro'
@@ -66,10 +66,10 @@ TODO
 Credits
 =======
 
-Superlocal is the product of [Ryan Ringler](http://github.com/rringler).  It was developed largerly as a pet project to continue to learn and better understand rails.
+Ideabox is the product of [Ryan Ringler](http://github.com/rringler).  It was developed largerly as a pet project to continue to learn and better understand rails.
 
 
 License
 =======
 
-Superlocal is licensed under the MIT License.  Please see the [LICENSE](http://github.com/rringler/superlocal/LICENSE) file for additional details.
+Ideabox is licensed under the MIT License.  Please see the [LICENSE](http://github.com/rringler/superlocal/LICENSE) file for additional details.
