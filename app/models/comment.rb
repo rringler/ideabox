@@ -1,5 +1,5 @@
 class Comment < ActiveRecord::Base
-  belongs_to :post
+  belongs_to :idea
   belongs_to :user
 
   acts_as_voteable
@@ -9,7 +9,7 @@ class Comment < ActiveRecord::Base
   scope :recent, ->(limit = 10) { order('created_at DESC').limit(limit) }
 
   validates :user_id, presence: true
-  validates :post_id, presence: true
+  validates :idea_id, presence: true
   validates :text,    presence: true
 
   def parent

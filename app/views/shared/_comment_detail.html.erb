@@ -15,12 +15,7 @@
       </div>
       <div class="row comment-footer">
         <small>
-          <% link_params = { board_id:  comment.post.board,
-                             post_id:   comment.post,
-                             parent_id: comment.id } %>
-          <%= link_to 'Reply', new_board_post_comment_path(link_params),
-                               remote: true,
-                               method: :get %>
+
         </small>
       </div>
     </div>

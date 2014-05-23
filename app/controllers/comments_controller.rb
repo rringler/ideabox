@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
   before_filter :comment_owner, only: [:edit, :update, :destroy]
 
   def new
-    @comment = Comment.new(post_id:   params[:post_id],
+    @comment = Comment.new(idea_id:   params[:idea_id],
                            parent_id: params[:parent_id])
 
     respond_to do |format|
@@ -20,7 +20,6 @@ class CommentsController < ApplicationController
       flash[:success] = "Created a new comment!"
     end
 
-    redirect_to board_post_path(@comment.post.board, @comment.post)
   end
 
   #def show
